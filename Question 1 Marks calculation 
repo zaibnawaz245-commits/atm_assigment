@@ -1,0 +1,32 @@
+# Question No 1 - Marks Calculation
+total_subjects = 5
+total_marks_per_subject = 100
+marks = []
+
+# Loop to enter marks
+for i in range(1, total_subjects + 1):
+    m = int(input(f"Enter marks for Subject {i}: "))
+    marks.append(m)
+
+total = sum(marks)
+percentage = (total / (total_subjects * total_marks_per_subject)) * 100
+
+# Grade logic
+if percentage >= 80:
+    grade = "A+"
+elif percentage >= 70:
+    grade = "A"
+elif percentage >= 60:
+    grade = "B"
+elif percentage >= 50:
+    grade = "C"
+else:
+    grade = "F"
+
+# Pass/Fail logic
+result = "Pass" if percentage >= 50 else "Fail"
+
+print(f"\nTotal Marks: {total}")
+print(f"Percentage: {percentage:.2f}%")
+print(f"Grade: {grade}")
+print(f"Result: {result}")
